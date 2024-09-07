@@ -1,0 +1,40 @@
+// CLASSE 
+
+public class Animal {
+    public void fazer_som(){
+
+    }
+
+}
+
+// SUB CLASSES: 
+
+public class Cachorro extends Animal {
+    @Override
+    public void fazer_som(){
+        System.out.print("Latido");
+    }
+}
+
+public class Gato extends Animal {
+    @Override
+    public void fazer_som(){
+        System.out.print("Miau");
+    }
+}
+
+// MAIN (para testar)
+
+public class Main {
+    public static void main(String[] args) {
+        Cachorro cachorro = new Cachorro();
+        Gato gato = new Gato();
+
+        cachorro.fazer_som();
+        System.out.print("\n");
+        gato.fazer_som();
+
+
+    }
+}
+
