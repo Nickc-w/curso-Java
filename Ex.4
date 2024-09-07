@@ -1,0 +1,76 @@
+// CLASSE ENDEREÇO
+
+public class Endereco {
+    private String rua;
+    private int numero;
+    private String cidade;
+
+    public String getRua() {
+        return rua;
+    }
+
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+    public String representacao(){
+        return rua + " " + numero + "," + cidade;
+    }
+    @Override
+    public String toString(){
+        return representacao();
+    }
+
+}
+
+// CLASSE PESSOA
+
+public class Pessoa {
+    private Endereco endereco;
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public void ObterEnderecoCompleto(){
+        System.out.print("Endereco: "+ this.getEndereco());
+    }
+
+}
+
+// MAIN (PARA TESTAR)
+
+public class Main {
+    public static void main(String[] args) {
+        Endereco endereco = new Endereco();
+        Pessoa pessoa = new Pessoa();
+
+        endereco.setRua("Flores");
+        endereco.setNumero(123);
+        endereco.setCidade("RJ");
+
+        pessoa.setEndereco(endereco);
+        System.out.print(pessoa.getEndereco());
+        
+    }
+}
+
