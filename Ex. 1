@@ -1,0 +1,59 @@
+// CLASSE
+public class Carro {
+    private String marca;
+    private String modelo;
+    private int ano;
+
+    public String getMarca() {
+        return marca;
+    }
+    public void setMarca(String marca){
+        this.marca = marca;
+
+    }
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+    public int getAno() {
+        return ano;
+    }
+    public void setAno(int ano){
+        this.ano = ano;
+    }
+   public void Descricao(){
+        System.out.print("\n DESCRIÇÃO ");
+        System.out.print("\nMarca: "+ marca);
+        System.out.print("\nModelo: "+ modelo);
+        System.out.print("\nAno: "+ ano);
+   }
+}
+
+// MAIN
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+      Carro carro = new Carro();
+
+
+      System.out.print("Informe a marca: ");
+      String Marca = sc.nextLine();
+      carro.setMarca(Marca);
+      System.out.print("Informe o modelo: ");
+      String Modelo = sc.nextLine();
+      carro.setModelo(Modelo);
+      System.out.print("Informe o ano: ");
+      int Ano = sc.nextInt();
+      carro.setAno(Ano);
+
+      carro.Descricao();
+
+      sc.close();
+        }
+    }
+
