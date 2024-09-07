@@ -1,0 +1,69 @@
+// CLASSE
+
+import java.util.Scanner;
+public class Funcionario {
+    Scanner sc = new Scanner(System.in);
+    private String nome;
+    private double salario;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+    public double calcular_bonificacao(){
+        return salario*1.1;
+    }
+
+    // Para testar os salarios no Main
+    public void Salario(){
+
+        System.out.print(" Salario normal: ");
+        double salario = sc.nextDouble();
+        this.setSalario(salario);
+        System.out.printf(" Salario com bonificaçao: %.2f",this.calcular_bonificacao());
+        System.out.print("\n");
+    }
+}
+
+// SUB CLASSES : 
+
+public class Gerente extends Funcionario{
+    @Override
+    public double calcular_bonificacao(){
+        return getSalario()*1.2;
+    }
+
+}
+
+public class Desenvolvedor extends Funcionario{
+    @Override
+    public double calcular_bonificacao(){
+        return getSalario()*1.15;
+    }
+}
+
+// MAIN (para testar)
+
+public class Main {
+    public static void main(String[] args) {
+        Funcionario funcionario = new Funcionario();
+       Gerente gerente = new Gerente();
+       Desenvolvedor desenvolvedor = new Desenvolvedor();
+
+      funcionario.Salario();
+      gerente.Salario();
+      desenvolvedor.Salario();
+
+        }
+    }
